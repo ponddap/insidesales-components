@@ -12,7 +12,8 @@ const dropDownItems = [
   {
     icon: 'EditFilledIcon',
     text: 'Edit',
-    onClick: action('clicked')
+    onClick: action('clicked'),
+    className: 'nickelodeon-guts'
   },
   {
     icon: 'GroupAddIcon',
