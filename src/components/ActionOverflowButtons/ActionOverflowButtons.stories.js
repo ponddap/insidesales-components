@@ -98,6 +98,7 @@ storiesOf('Components', module)
               sectionFn: () => (
                 <div style={{padding: '16px', paddingBottom: '300px', backgroundColor: colors.greenBackground}}>
                   <ActionOverflowButtons
+                    className="main-class"
                     overflowItems={dropDownItems}
                   />
                 </div>

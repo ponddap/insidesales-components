@@ -222,10 +222,10 @@ class ActionOverflowButtons extends React.Component {
 
   render() {
     const { overflowItemsVisible, transitionOff, actionButtonToggle } = this.state;
-    const { labelsPosition, actionButtonIcon, overflowItems } = this.props;
+    const { labelsPosition, actionButtonIcon, overflowItems, className } = this.props;
     return (
       <ActionOverflowButtonsWrapper className={this.props.className}>
-        <ActionButton icon={actionButtonIcon} onClick={this.toggleOverflowItems} toggled={actionButtonToggle} />
+        <ActionButton className={className} icon={actionButtonIcon} onClick={this.toggleOverflowItems} toggled={actionButtonToggle} />
         <OverflowList
           overflowItemsVisible={overflowItemsVisible}
           transitionOff={transitionOff}
