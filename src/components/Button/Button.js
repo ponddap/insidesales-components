@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import * as _ from 'lodash';
 
 import Loader from '../Loader';
-import { colors, typography } from '../styles';
+import { colors, typography, boxShadows } from '../styles';
 
 export const buttonAnimationTimeSeconds = 2;
 
@@ -48,7 +48,7 @@ const ButtonBase = styled.button`
   }};
   background: var(--background);
 
-  transition: filter .25s ease-in-out, box-shadow .25s ease-in-out;
+  transition: box-shadow .14s ease-in-out;
   &:hover {
     background: ${(props) => {
       if (props.flat) {
@@ -58,19 +58,12 @@ const ButtonBase = styled.button`
       return 'var(--background)';
     }};
 
-    filter: ${(props) => {
-      if (props.loading || props.fade || props.disabled) {
-        return 'none';
-      }
-      return 'brightness(0.9)';
-    }};
-
     box-shadow: ${(props) => {
       if (props.loading || props.fade || props.disabled || props.flat) {
         return 0;
       }
 
-      return '0 0 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24)';
+      return `inset 0 0 0 9999px ${colors.black10}, ` + boxShadows.lvl3;
     }};
   }
 
@@ -88,7 +81,7 @@ const ButtonBase = styled.button`
         return 0;
       }
 
-      return '0 0 8px 0 rgba(0,0,0,0.12), 0 8px 8px 0 rgba(0,0,0,0.24)';
+      return `inset 0 0 0 9999px transparent, ` + boxShadows.lvl6;
     }};
   }
 
@@ -139,8 +132,6 @@ const CenteredSpan = styled.span`
 
   font-family: 'isdc-roboto', 'Roboto', sans-serif;
   ${typography.body2}
-
-  filter: none;
 
   padding: 0;
   margin: 0;
